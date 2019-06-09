@@ -52,7 +52,7 @@ class URLSessionHTTPClientTests: XCTestCase {
             exp.fulfill()
         }
 
-        URLSessionHTTPClient().get(from: url) { _ in }
+        makeSUT().get(from: url) { _ in }
 
         wait(for: [exp], timeout: 1.0)
     }
@@ -62,11 +62,9 @@ class URLSessionHTTPClientTests: XCTestCase {
         let error = NSError(domain: "anny error", code: 1)
         URLProtocolStub.stub(data: nil, response: nil, error: error)
 
-        let sut = URLSessionHTTPClient()
-
         let exp = expectation(description: "Wait for completion")
 
-        sut.get(from: url) { result in // <- trailing closure to handle completion block with its value
+        makeSUT().get(from: url) { result in // <- trailing closure to handle completion block with its value
             switch result {
             case let .failure(receivedError as NSError):
                 XCTAssertEqual(receivedError, error)
@@ -80,6 +78,10 @@ class URLSessionHTTPClientTests: XCTestCase {
     }
 
     // MARK: - Helpers
+
+    private func makeSUT() -> URLSessionHTTPClient {
+        return URLSessionHTTPClient()
+    }
 
     /*
      Subclassing, an abstract class (which happens to be named "Protocol")
