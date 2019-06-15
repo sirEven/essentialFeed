@@ -93,7 +93,6 @@ class RemoteFeedloaderTests: XCTestCase {
             imageURL: URL(string: "http://another-url.com")!
         )
 
-        let itemsJSON = ["items": [item1.json, item2.json]]
         let items = [item1.model, item2.model]
 
         expect(sut, toCompleteWith: .success(items), when: {
@@ -201,3 +200,5 @@ class RemoteFeedloaderTests: XCTestCase {
         }
     }
 }
+
+//TODO: watch "Speeding up Development by: Reducing Debugging Time, Minimizing Risk & Maximizing Learning, and Decoupling Tests From Implementation Details" (41:17) video one more time then move on :)
