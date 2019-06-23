@@ -200,5 +200,3 @@ class LoadFeedFormRemoteUseCaseTests: XCTestCase {
         }
     }
 }
-
-//TODO: watch "Speeding up Development by: Reducing Debugging Time, Minimizing Risk & Maximizing Learning, and Decoupling Tests From Implementation Details" (41:17) video one more time then move on :)
