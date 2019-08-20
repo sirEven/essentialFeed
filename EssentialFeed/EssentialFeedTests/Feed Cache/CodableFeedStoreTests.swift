@@ -71,7 +71,7 @@ class CodableFeedStoreTests: XCTestCase {
     }
 
     func test_retrieve_deliversEmptyOnEmptyCache() {
-        let sut = makeSUT() 
+        let sut = makeSUT()
         let exp = expectation(description: "Wait for cache retrieval")
 
         sut.retrieve { result in
@@ -137,8 +137,10 @@ class CodableFeedStoreTests: XCTestCase {
     }
 
     // - MARK: Helpers
-    private func makeSUT() -> CodableFeedStore {
-        return CodableFeedStore()
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> CodableFeedStore {
+        let sut = CodableFeedStore()
+        trackForMemoryLeaks(sut, file: file, line: line)
+        return sut
     }
 }
 
