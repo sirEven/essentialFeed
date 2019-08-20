@@ -1,8 +1,4 @@
 //
-//  FeedStore.swift
-//  EssentialFeed
-//
-//  Created by Severin Bretscher on 15.07.19.
 //  Copyright © 2019 SevDev. All rights reserved.
 //
 
@@ -23,5 +19,3 @@ public protocol FeedStore {
     func insert(_ feed: [LocalFeedImage], timestamp: Date, completion: @escaping InsertionCompletion)
     func retrieve(completion: @escaping RetrievalCompletion)
 }
-
-
