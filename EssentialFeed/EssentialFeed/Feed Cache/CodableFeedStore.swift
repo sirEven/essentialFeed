@@ -39,7 +39,7 @@ public class CodableFeedStore: FeedStore {
     public init(storeURL: URL) {
         self.storeURL = storeURL
     }
-
+    
     public func retrieve(completion: @escaping RetrievalCompletion) {
         let storeURL = self.storeURL
        queue.async {
