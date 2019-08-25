@@ -5,7 +5,7 @@
 import XCTest
 import EssentialFeed
 
-extension FailableInsertFeedStoreSpecs where Self:XCTestCase {
+extension FailableInsertFeedStoreSpecs where Self: XCTestCase {
     func assertThatInsertDeliversErrorOnInsertionError(on sut: FeedStore, file: StaticString = #file, line: UInt = #line) {
         let insertionError = insert((uniqueImageFeed().local, Date()), to: sut)
 
