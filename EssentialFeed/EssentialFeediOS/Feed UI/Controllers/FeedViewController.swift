@@ -7,7 +7,7 @@ import EssentialFeed
 
 public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching {
     private var refreshController: FeedRefreshViewController?
-    var tableModel = [FeedImageCellCotroller]() {
+    var tableModel = [FeedImageCellController]() {
         didSet { tableView.reloadData() }
     }
 
@@ -46,7 +46,7 @@ public final class FeedViewController: UITableViewController, UITableViewDataSou
         indexPaths.forEach(cancelCellControllerLoad)
     }
 
-    private func cellController(forRowAt indexPath: IndexPath) -> FeedImageCellCotroller {
+    private func cellController(forRowAt indexPath: IndexPath) -> FeedImageCellController {
         return tableModel[indexPath.row]
     }
 
