@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oVZ-cB-zh0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oVZ-cB-zh0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +20,7 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="4OV-yt-XLP">
-                            <rect key="frame" x="0.0" y="880" width="414" height="16"/>
+                            <rect key="frame" x="0.0" y="680" width="414" height="16"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
@@ -75,6 +75,9 @@
                                                             <state key="normal" title="↺">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="retryButtonTapped" destination="y07-jc-zcF" eventType="touchUpInside" id="l8w-Bx-4wl"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -116,6 +119,14 @@
                                         <constraint firstItem="NNf-OG-ETM" firstAttribute="leading" secondItem="zh9-e6-kTD" secondAttribute="leadingMargin" id="zBv-yu-HQm"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="XPt-rM-nnH" id="0vD-SF-NOL"/>
+                                    <outlet property="feedImageContainer" destination="zoh-Jq-Nia" id="E6c-sH-vNP"/>
+                                    <outlet property="feedImageRetryButton" destination="dVZ-Yb-cmU" id="bdn-LW-UnE"/>
+                                    <outlet property="feedImageView" destination="g7I-Rp-QCB" id="CT8-bY-xfn"/>
+                                    <outlet property="locationContainer" destination="Jt1-gj-5oj" id="tbQ-xx-Adr"/>
+                                    <outlet property="locationLabel" destination="GUB-eA-4me" id="cKJ-1B-YqV"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
