@@ -1,0 +1,9 @@
+/* 
+  Feed.strings
+  EssentialFeed
+
+  Created by Severin Bretscher on 02.01.20.
+  Copyright © 2020 SevDev. All rights reserved.
+*/
+
+"FEED_VIEW_TITLE" = "Meu Feed";
