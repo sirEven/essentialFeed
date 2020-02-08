@@ -4,32 +4,11 @@
 
 import Foundation
 
-public struct FeedViewModel {
-    public let feed: [FeedImage]
-}
-
 public protocol FeedView {
      func display(_ view: FeedViewModel)
 }
-
-public struct FeedLoadingViewModel {
-    public let isLoading: Bool
-}
-
 public protocol FeedLoadingView {
     func display(_ view: FeedLoadingViewModel)
-}
-
-public struct FeedErrorViewModel {
-    public let message: String?
-
-    static var noError: FeedErrorViewModel {
-        return FeedErrorViewModel(message: nil)
-    }
-
-    static func error(message: String) -> FeedErrorViewModel {
-        return FeedErrorViewModel(message: message)
-    }
 }
 
 public protocol FeedErrorView {
