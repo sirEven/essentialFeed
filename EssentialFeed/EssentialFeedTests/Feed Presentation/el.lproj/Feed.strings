@@ -1,0 +1,10 @@
+/* 
+  Feed.strings
+  EssentialFeed
+
+  Created by Severin Bretscher on 08.02.20.
+  Copyright © 2020 SevDev. All rights reserved.
+*/
+
+"FEED_VIEW_TITLE" = "To Feed μoυ";
+"FEED_VIEW_CONNECTION_ERROR" = "Δεν ήταν δυνατή η σύνδεση στο διακομιστή";
