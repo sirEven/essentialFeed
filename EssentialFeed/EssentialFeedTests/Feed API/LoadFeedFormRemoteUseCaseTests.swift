@@ -41,10 +41,10 @@ class LoadFeedFormRemoteUseCaseTests: XCTestCase {
     func test_load_deliversErrorOnClientError() {
         let (sut, client) = makeSUT()
 
-       expect(sut, toCompleteWith: failure(.connectivity), when: {
+        expect(sut, toCompleteWith: failure(.connectivity), when: {
             let clientError = NSError(domain: "Test", code: 0)
             client.complete(with: clientError)
-       })
+        })
     }
 
     func test_load_deliversErrorOnNon200HTTPResponse() {
@@ -174,14 +174,21 @@ class LoadFeedFormRemoteUseCaseTests: XCTestCase {
     }
 
     private class HTTPClientSpy: HTTPClient {
+
+        private struct Task: HTTPClientTask {
+            func cancel() {}
+        }
+
         private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
 
         var requestedURLs: [URL] {
             return messages.map { $0.url }
         }
 
-        func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
+        func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) -> HTTPClientTask {
             messages.append((url, completion))
+            return Task()
+
         }
 
         func complete(with error: Error, at index: Int = 0) {
@@ -194,7 +201,7 @@ class LoadFeedFormRemoteUseCaseTests: XCTestCase {
                 statusCode: code,
                 httpVersion: nil,
                 headerFields: nil
-            )!
+                )!
             messages[index].completion(.success((data, response)))
         }
     }
