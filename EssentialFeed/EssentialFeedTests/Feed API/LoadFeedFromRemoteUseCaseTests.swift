@@ -9,7 +9,7 @@
 import XCTest
 import EssentialFeed
 
-class LoadFeedFormRemoteUseCaseTests: XCTestCase {
+class LoadFeedFromRemoteUseCaseTests: XCTestCase {
 
     func test_init_doesNotRequestDateFromURL() {
         let (_, client) = makeSUT()
