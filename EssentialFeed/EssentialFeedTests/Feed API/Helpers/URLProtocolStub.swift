@@ -8,7 +8,6 @@ import Foundation
  Subclassing, an abstract class (which happens to be named "Protocol")
  */
 
-
 class URLProtocolStub: URLProtocol {
     private struct Stub {
         let data: Data?
