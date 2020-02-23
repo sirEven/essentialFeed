@@ -350,12 +350,6 @@
 		4C25927423F4557A004F6DE5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				4CC8371F226B7CC400B6DC27 /* RemoteFeedLoader.swift */,
-				4C2CA99222930E5B00FEF943 /* FeedItemsMapper.swift */,
-				4CB3965222E23D900073E5BC /* RemoteFeedItem.swift */,
-				4C25927C23F95B5F004F6DE5 /* RemoteFeedImageDataLoader.swift */,
-				4C2CA99022930DE900FEF943 /* HTTPClient.swift */,
-				4C65EB2822ADB036006E5E62 /* URLSessionHTTPClient.swift */,
 				4C5FF0F123F965ED00F1336D /* HTTPURLResponse+SatusCode.swift */,
 			);
 			path = Helpers;
@@ -592,6 +586,12 @@
 		4CC8371E226B7CAB00B6DC27 /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
+				4CC8371F226B7CC400B6DC27 /* RemoteFeedLoader.swift */,
+				4C2CA99222930E5B00FEF943 /* FeedItemsMapper.swift */,
+				4CB3965222E23D900073E5BC /* RemoteFeedItem.swift */,
+				4C25927C23F95B5F004F6DE5 /* RemoteFeedImageDataLoader.swift */,
+				4C2CA99022930DE900FEF943 /* HTTPClient.swift */,
+				4C65EB2822ADB036006E5E62 /* URLSessionHTTPClient.swift */,
 				4C25927423F4557A004F6DE5 /* Helpers */,
 			);
 			path = "Feed API";
