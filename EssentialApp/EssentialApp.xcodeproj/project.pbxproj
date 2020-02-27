@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4C4262882408393C00AE1FE8 /* FeedLoaderWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4262872408393C00AE1FE8 /* FeedLoaderWithFallbackComposite.swift */; };
 		4C42628A24083A3400AE1FE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C42628924083A3400AE1FE8 /* ViewController.swift */; };
+		4C42628C24083AE000AE1FE8 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C42628B24083AE000AE1FE8 /* FeedImageDataLoaderWithFallbackComposite.swift */; };
+		4C42628E24083D7100AE1FE8 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C42628D24083D7100AE1FE8 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */; };
 		4C9137C32402CD6F000D18D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9137C22402CD6F000D18D0 /* AppDelegate.swift */; };
 		4C9137C52402CD6F000D18D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9137C42402CD6F000D18D0 /* SceneDelegate.swift */; };
 		4C9137CA2402CD6F000D18D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9137C82402CD6F000D18D0 /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 /* Begin PBXFileReference section */
 		4C4262872408393C00AE1FE8 /* FeedLoaderWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderWithFallbackComposite.swift; sourceTree = "<group>"; };
 		4C42628924083A3400AE1FE8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4C42628B24083AE000AE1FE8 /* FeedImageDataLoaderWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderWithFallbackComposite.swift; sourceTree = "<group>"; };
+		4C42628D24083D7100AE1FE8 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderWithFallbackCompositeTests.swift; sourceTree = "<group>"; };
 		4C9137BF2402CD6F000D18D0 /* EssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C9137C22402CD6F000D18D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C9137C42402CD6F000D18D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				4C9137C22402CD6F000D18D0 /* AppDelegate.swift */,
 				4C9137C42402CD6F000D18D0 /* SceneDelegate.swift */,
 				4C4262872408393C00AE1FE8 /* FeedLoaderWithFallbackComposite.swift */,
+				4C42628B24083AE000AE1FE8 /* FeedImageDataLoaderWithFallbackComposite.swift */,
 				4C9137C82402CD6F000D18D0 /* Main.storyboard */,
 				4C42628924083A3400AE1FE8 /* ViewController.swift */,
 				4C9137CB2402CD70000D18D0 /* Assets.xcassets */,
@@ -121,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				4C9137EC24057F5F000D18D0 /* FeedLoaderWithFallbackCompositeTests.swift */,
+				4C42628D24083D7100AE1FE8 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */,
 				4C9137DB2402CD70000D18D0 /* Info.plist */,
 			);
 			path = EssentialAppTests;
@@ -242,6 +248,7 @@
 				4C4262882408393C00AE1FE8 /* FeedLoaderWithFallbackComposite.swift in Sources */,
 				4C42628A24083A3400AE1FE8 /* ViewController.swift in Sources */,
 				4C9137C52402CD6F000D18D0 /* SceneDelegate.swift in Sources */,
+				4C42628C24083AE000AE1FE8 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C42628E24083D7100AE1FE8 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,
 				4C9137ED24057F5F000D18D0 /* FeedLoaderWithFallbackCompositeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
