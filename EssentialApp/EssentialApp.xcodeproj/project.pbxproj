@@ -144,10 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				4C42628F2408443E00AE1FE8 /* Helpers */,
-				4C9137EC24057F5F000D18D0 /* FeedLoaderWithFallbackCompositeTests.swift */,
 				4C42628D24083D7100AE1FE8 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */,
-				4C9137DB2402CD70000D18D0 /* Info.plist */,
+				4C9137EC24057F5F000D18D0 /* FeedLoaderWithFallbackCompositeTests.swift */,
 				4C76C275241285F400C3C52C /* FeedLoaderCacheDecoratorTests.swift */,
+				4C9137DB2402CD70000D18D0 /* Info.plist */,
 			);
 			path = EssentialAppTests;
 			sourceTree = "<group>";
