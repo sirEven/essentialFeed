@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C2AE4AA2412951D003F65F7 /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AE4A92412951D003F65F7 /* FeedLoaderStub.swift */; };
 		4C2AE4AC2412969A003F65F7 /* XCTestCase+FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AE4AB2412969A003F65F7 /* XCTestCase+FeedLoader.swift */; };
+		4C2AE4B02412AEEA003F65F7 /* FeedLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AE4AF2412AEEA003F65F7 /* FeedLoaderCacheDecorator.swift */; };
 		4C4262882408393C00AE1FE8 /* FeedLoaderWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4262872408393C00AE1FE8 /* FeedLoaderWithFallbackComposite.swift */; };
 		4C42628A24083A3400AE1FE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C42628924083A3400AE1FE8 /* ViewController.swift */; };
 		4C42628C24083AE000AE1FE8 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C42628B24083AE000AE1FE8 /* FeedImageDataLoaderWithFallbackComposite.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		4C2AE4A92412951D003F65F7 /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
 		4C2AE4AB2412969A003F65F7 /* XCTestCase+FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedLoader.swift"; sourceTree = "<group>"; };
+		4C2AE4AF2412AEEA003F65F7 /* FeedLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecorator.swift; sourceTree = "<group>"; };
 		4C4262872408393C00AE1FE8 /* FeedLoaderWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderWithFallbackComposite.swift; sourceTree = "<group>"; };
 		4C42628924083A3400AE1FE8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4C42628B24083AE000AE1FE8 /* FeedImageDataLoaderWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderWithFallbackComposite.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				4C9137CB2402CD70000D18D0 /* Assets.xcassets */,
 				4C9137CD2402CD70000D18D0 /* LaunchScreen.storyboard */,
 				4C9137D02402CD70000D18D0 /* Info.plist */,
+				4C2AE4AF2412AEEA003F65F7 /* FeedLoaderCacheDecorator.swift */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				4C9137C32402CD6F000D18D0 /* AppDelegate.swift in Sources */,
 				4C4262882408393C00AE1FE8 /* FeedLoaderWithFallbackComposite.swift in Sources */,
 				4C42628A24083A3400AE1FE8 /* ViewController.swift in Sources */,
+				4C2AE4B02412AEEA003F65F7 /* FeedLoaderCacheDecorator.swift in Sources */,
 				4C9137C52402CD6F000D18D0 /* SceneDelegate.swift in Sources */,
 				4C42628C24083AE000AE1FE8 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
 			);
