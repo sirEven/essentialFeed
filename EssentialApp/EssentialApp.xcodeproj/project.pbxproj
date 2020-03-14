@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C02CE8A241CF0CB008D38D4 /* DebuggingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02CE89241CF0CB008D38D4 /* DebuggingSceneDelegate.swift */; };
 		4C2AE4AA2412951D003F65F7 /* FeedLoaderStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AE4A92412951D003F65F7 /* FeedLoaderStub.swift */; };
 		4C2AE4AC2412969A003F65F7 /* XCTestCase+FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AE4AB2412969A003F65F7 /* XCTestCase+FeedLoader.swift */; };
 		4C2AE4B02412AEEA003F65F7 /* FeedLoaderCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2AE4AF2412AEEA003F65F7 /* FeedLoaderCacheDecorator.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C02CE89241CF0CB008D38D4 /* DebuggingSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingSceneDelegate.swift; sourceTree = "<group>"; };
 		4C2AE4A92412951D003F65F7 /* FeedLoaderStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderStub.swift; sourceTree = "<group>"; };
 		4C2AE4AB2412969A003F65F7 /* XCTestCase+FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedLoader.swift"; sourceTree = "<group>"; };
 		4C2AE4AF2412AEEA003F65F7 /* FeedLoaderCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecorator.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				4C9137C22402CD6F000D18D0 /* AppDelegate.swift */,
 				4C9137C42402CD6F000D18D0 /* SceneDelegate.swift */,
+				4C02CE89241CF0CB008D38D4 /* DebuggingSceneDelegate.swift */,
 				4C4262872408393C00AE1FE8 /* FeedLoaderWithFallbackComposite.swift */,
 				4C42628B24083AE000AE1FE8 /* FeedImageDataLoaderWithFallbackComposite.swift */,
 				4C9137C82402CD6F000D18D0 /* Main.storyboard */,
@@ -353,6 +356,7 @@
 				4C4262882408393C00AE1FE8 /* FeedLoaderWithFallbackComposite.swift in Sources */,
 				4C42628A24083A3400AE1FE8 /* ViewController.swift in Sources */,
 				4C2AE4B02412AEEA003F65F7 /* FeedLoaderCacheDecorator.swift in Sources */,
+				4C02CE8A241CF0CB008D38D4 /* DebuggingSceneDelegate.swift in Sources */,
 				4C9137C52402CD6F000D18D0 /* SceneDelegate.swift in Sources */,
 				4C42628C24083AE000AE1FE8 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
 				4C2AE4BA2412BF54003F65F7 /* FeedImageDataLoaderCacheDecorator.swift in Sources */,
@@ -435,6 +439,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84VDFSM8R5;
+				GCC_OPTIMIZATION_LEVEL = s;
 				INFOPLIST_FILE = EssentialAppUIAcceptanceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
