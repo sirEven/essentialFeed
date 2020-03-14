@@ -17,7 +17,7 @@
                BlueprintIdentifier = "4C9137BE2402CD6F000D18D0"
                BuildableName = "EssentialApp.app"
                BlueprintName = "EssentialApp"
-               ReferencedContainer = "container:EssentialApp.xcodeproj">
+               ReferencedContainer = "container:EssentialApp/EssentialApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,7 +36,7 @@
                BlueprintIdentifier = "4C9137D42402CD70000D18D0"
                BuildableName = "EssentialAppTests.xctest"
                BlueprintName = "EssentialAppTests"
-               ReferencedContainer = "container:EssentialApp.xcodeproj">
+               ReferencedContainer = "container:EssentialApp/EssentialApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,7 +58,7 @@
             BlueprintIdentifier = "4C9137BE2402CD6F000D18D0"
             BuildableName = "EssentialApp.app"
             BlueprintName = "EssentialApp"
-            ReferencedContainer = "container:EssentialApp.xcodeproj">
+            ReferencedContainer = "container:EssentialApp/EssentialApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -75,7 +75,7 @@
             BlueprintIdentifier = "4C9137BE2402CD6F000D18D0"
             BuildableName = "EssentialApp.app"
             BlueprintName = "EssentialApp"
-            ReferencedContainer = "container:EssentialApp.xcodeproj">
+            ReferencedContainer = "container:EssentialApp/EssentialApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
