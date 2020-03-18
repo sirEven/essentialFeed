@@ -3,6 +3,7 @@
 //
 
 import EssentialFeed
+import EssentialFeediOS
 
 final class FeedLoaderPresentationAdapter: FeedViewControllerDelegate {
     private let feedLoader: FeedLoader
@@ -12,7 +13,7 @@ final class FeedLoaderPresentationAdapter: FeedViewControllerDelegate {
         self.feedLoader = feedLoader
     }
 
-    func didRequestFeedRefres() {
+    func didRequestFeedRefresh() {
         presenter?.didStartLoadingFeed()
 
         feedLoader.load { [weak self] result in
