@@ -8,6 +8,7 @@ import EssentialFeediOS
 @testable import EssentialApp
 
 class FeedAcceptanceTests: XCTestCase {
+
     func test_onLaunch_displaysRemoteFeedWhenCustomerHasConnectivity() {
 
         let feed = launch(httpClient: .online(response), store: .empty)
@@ -19,7 +20,16 @@ class FeedAcceptanceTests: XCTestCase {
     }
 
     func test_displayCacheRemoteFeedWhenCustomerHasNoConnectivity() {
+        let sharedStore = InMemoryFeedStore.empty
+        let onlineFeed = launch(httpClient: .online(response), store: sharedStore)
+        onlineFeed.simulateFeedImageViewVisible(at: 0)
+        onlineFeed.simulateFeedImageViewVisible(at: 1)
 
+        let offlineFeed = launch(httpClient: .offline, store: sharedStore)
+
+        XCTAssertEqual(offlineFeed.numberOfRenderedFeedImageViews(), 2)
+        XCTAssertEqual(offlineFeed.renderedFeedImagegData(at: 0), makeImageData())
+        XCTAssertEqual(offlineFeed.renderedFeedImagegData(at: 1), makeImageData())
     }
 
     func test_onLaunch_displaysEmptyFeedWhenCustomerHasNoConnectivityAndNoCache() {
