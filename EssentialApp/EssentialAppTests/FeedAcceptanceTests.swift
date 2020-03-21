@@ -38,6 +38,22 @@ class FeedAcceptanceTests: XCTestCase {
         XCTAssertEqual(feed.numberOfRenderedFeedImageViews(), 0)
     }
 
+    func text_onEnteringBackrgound_deletesExpiredFeedCache() {
+        let store = InMemoryFeedStore.withExpiredFeedCache
+
+        enterBackground(with: store)
+
+        XCTAssertNil(store.feedCache, "Expected to delete expired cache")
+    }
+
+    func text_onEnteringBackrgound_keepsNonExpiredFeedCache() {
+        let store = InMemoryFeedStore.withNonExpiredFeedCache
+
+        enterBackground(with: store)
+
+        XCTAssertNotNil(store.feedCache, "Expected to keep non-expired expired cache")
+    }
+
     // MARK: - Helpers
 
     private func launch(httpClient: HTTPClientStub = .offline, store: InMemoryFeedStore = .empty) -> FeedViewController {
@@ -48,6 +64,11 @@ class FeedAcceptanceTests: XCTestCase {
 
         let nav = sut.window?.rootViewController as? UINavigationController
         return  nav?.topViewController as! FeedViewController
+    }
+
+    private func enterBackground(with store: InMemoryFeedStore) {
+        let sut = SceneDelegate(httpClient: HTTPClientStub.offline, store: store)
+        sut.sceneWillResignActive(UIApplication.shared.connectedScenes.first!)
     }
 
     private class HTTPClientStub: HTTPClient {
@@ -76,61 +97,74 @@ class FeedAcceptanceTests: XCTestCase {
     }
 
     private class InMemoryFeedStore: FeedStore, FeedImageDataStore {
-         private var feedCache: CachedFeed?
-         private var feedImageDataCache: [URL: Data] = [:]
+        private(set) var feedCache: CachedFeed?
+        private var feedImageDataCache: [URL: Data] = [:]
 
-         func deleteCachedFeed(completion: @escaping FeedStore.DeletionCompletion) {
-             feedCache = nil
-             completion(.success(()))
-         }
+        private init(feedCache: CachedFeed? = nil) {
+            self.feedCache = feedCache
+        }
 
-         func insert(_ feed: [LocalFeedImage], timestamp: Date, completion: @escaping FeedStore.InsertionCompletion) {
-             feedCache = CachedFeed(feed: feed, timestamp: timestamp)
-             completion(.success(()))
-         }
+        func deleteCachedFeed(completion: @escaping FeedStore.DeletionCompletion) {
+            feedCache = nil
+            completion(.success(()))
+        }
 
-         func retrieve(completion: @escaping FeedStore.RetrievalCompletion) {
-             completion(.success(feedCache))
-         }
+        func insert(_ feed: [LocalFeedImage], timestamp: Date, completion: @escaping FeedStore.InsertionCompletion) {
+            feedCache = CachedFeed(feed: feed, timestamp: timestamp)
+            completion(.success(()))
+        }
 
-         func insert(_ data: Data, for url: URL, completion: @escaping (FeedImageDataStore.InsertionResult) -> Void) {
-             feedImageDataCache[url] = data
-             completion(.success(()))
-         }
+        func retrieve(completion: @escaping FeedStore.RetrievalCompletion) {
+            completion(.success(feedCache))
+        }
 
-         func retrieve(dataForURL url: URL, completion: @escaping (FeedImageDataStore.RetrievalResult) -> Void) {
-             completion(.success(feedImageDataCache[url]))
-         }
+        func insert(_ data: Data, for url: URL, completion: @escaping (FeedImageDataStore.InsertionResult) -> Void) {
+            feedImageDataCache[url] = data
+            completion(.success(()))
+        }
 
-         static var empty: InMemoryFeedStore {
-             InMemoryFeedStore()
-         }
-     }
+        func retrieve(dataForURL url: URL, completion: @escaping (FeedImageDataStore.RetrievalResult) -> Void) {
+            completion(.success(feedImageDataCache[url]))
+        }
 
-     private func response(for url: URL) -> (Data, HTTPURLResponse) {
-         let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
-         return (makeData(for: url), response)
-     }
+        static var empty: InMemoryFeedStore {
+            InMemoryFeedStore()
+        }
 
-     private func makeData(for url: URL) -> Data {
-         switch url.absoluteString {
-         case "http://image.com":
-             return makeImageData()
+        static var withExpiredFeedCache: InMemoryFeedStore {
+            InMemoryFeedStore(feedCache: CachedFeed(feed: [], timestamp: Date.distantPast))
+        }
 
-         default:
-             return makeFeedData()
-         }
-     }
+        static var withNonExpiredFeedCache: InMemoryFeedStore {
+            InMemoryFeedStore(feedCache: CachedFeed(feed: [], timestamp: Date()))
+        }
 
-     private func makeImageData() -> Data {
-         return UIImage.make(withColor: .red).pngData()!
-     }
+    }
 
-     private func makeFeedData() -> Data {
-         return try! JSONSerialization.data(withJSONObject: ["items": [
-             ["id": UUID().uuidString, "image": "http://image.com"],
-             ["id": UUID().uuidString, "image": "http://image.com"]
-         ]])
-     }
+    private func response(for url: URL) -> (Data, HTTPURLResponse) {
+        let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
+        return (makeData(for: url), response)
+    }
+
+    private func makeData(for url: URL) -> Data {
+        switch url.absoluteString {
+        case "http://image.com":
+            return makeImageData()
+
+        default:
+            return makeFeedData()
+        }
+    }
+
+    private func makeImageData() -> Data {
+        return UIImage.make(withColor: .red).pngData()!
+    }
+
+    private func makeFeedData() -> Data {
+        return try! JSONSerialization.data(withJSONObject: ["items": [
+            ["id": UUID().uuidString, "image": "http://image.com"],
+            ["id": UUID().uuidString, "image": "http://image.com"]
+            ]])
+    }
 
 }
