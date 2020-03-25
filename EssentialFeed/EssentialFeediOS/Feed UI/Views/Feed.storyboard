@@ -18,8 +18,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dc-FA-ePq">
-                                    <rect key="frame" x="186" y="12" width="42" height="20.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dc-FA-ePq">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -27,8 +27,10 @@
                             </subviews>
                             <color key="backgroundColor" red="1" green="0.41568627450000001" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="9dc-FA-ePq" firstAttribute="centerX" secondItem="f6J-fc-CDl" secondAttribute="centerX" id="ZHW-TY-VmS"/>
-                                <constraint firstItem="9dc-FA-ePq" firstAttribute="centerY" secondItem="f6J-fc-CDl" secondAttribute="centerY" id="mmt-IH-a4A"/>
+                                <constraint firstItem="9dc-FA-ePq" firstAttribute="leading" secondItem="f6J-fc-CDl" secondAttribute="leading" id="Enp-Do-2ah"/>
+                                <constraint firstAttribute="bottom" secondItem="9dc-FA-ePq" secondAttribute="bottom" id="MOR-pZ-fRx"/>
+                                <constraint firstAttribute="trailing" secondItem="9dc-FA-ePq" secondAttribute="trailing" id="fcj-QE-1nf"/>
+                                <constraint firstItem="9dc-FA-ePq" firstAttribute="top" secondItem="f6J-fc-CDl" secondAttribute="top" id="w1n-ql-8I3"/>
                             </constraints>
                             <connections>
                                 <outlet property="label" destination="9dc-FA-ePq" id="ZJC-Co-rol"/>
